@@ -10,6 +10,14 @@ export default function AboutPage() {
     Linking.openURL('https://github.com/ShivharUkale');
   };
 
+  const handleEmailPress = () => {
+    Linking.openURL('mailto:shivharukale143@gmail.com');
+  };
+
+  const handlePhonePress = () => {
+    Linking.openURL('tel:+919860186720');
+  };
+  
   return (
     <ScrollView style={resumeStyles.container}>
       {/* Header */}
@@ -23,8 +31,12 @@ export default function AboutPage() {
         <Text style={resumeStyles.name}>Shivhar Ukale</Text>
         <Text style={resumeStyles.title}>Full-Stack Developer</Text>
         <View style={resumeStyles.contactRow}>
-          <Text style={resumeStyles.contactText}>shivharukale143@gmail.com</Text>
-          <Text style={resumeStyles.contactText}>+919860186720</Text>
+          <TouchableOpacity onPress={handleEmailPress}>
+            <Text style={resumeStyles.linkText}>shivharukale143@gmail.com</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={handlePhonePress}>
+            <Text style={resumeStyles.linkText}>+919860186720</Text>
+          </TouchableOpacity>
         </View>
         <View style={resumeStyles.contactRow}>
           <Text style={resumeStyles.contactText}>Pune, India</Text>
